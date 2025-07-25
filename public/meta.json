@@ -1,0 +1,25 @@
+{
+  "analyticsId": "G-XXXXXXXX",
+
+  "home": {
+    "title": "Anasayfa | aendirr'in Projesi",
+    "description": "Anasayfa Açıklama - Projenizin en önemli bilgileri burada.",
+    "keywords": "anasayfa, react, aendirr, proje",
+    "canonical": "https://www.ornekdomain.com/",
+    "robots": "index, follow",
+    "author": "aendirr",
+    "publisher": "aendirr",
+    "og:title": "Anasayfa | aendirr'in Projesi",
+    "og:description": "Anasayfa Açıklama - Projenizin detayları.",
+    "og:image": "https://www.ornekdomain.com/images/og-image.jpg",
+    "og:type": "website",
+    "og:url": "https://www.ornekdomain.com/",
+    "og:site_name": "aendirr'in Projesi",
+    "og:locale": "tr_TR",
+    "twitter:card": "summary_large_image",
+    "twitter:title": "Anasayfa | aendirr'in Projesi",
+    "twitter:description": "Anasayfa Açıklama - Projenizin detayları.",
+    "twitter:image": "https://www.ornekdomain.com/images/og-image.jpg",
+    "twitter:site": "@kullaniciAdin"
+  }
+}

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap (mutlaka ekle)
+Sitemap: https://www.ornekdomain.com/sitemap.xml
