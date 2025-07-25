@@ -1,0 +1,134 @@
+/**
+ * Copyright 2025 aendirr
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ */
+
+
+.bottom-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, var(--secondary-bg) 0%, var(--primary-bg) 100%);
+  text-align: center;
+}
+
+.bottom-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bottom-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--primary-text);
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.bottom-text {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.7;
+  color: var(--primary-text);
+  opacity: 0.9;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bottom-cta {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-btn,
+.info-btn {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 180px;
+}
+
+.contact-btn {
+  background: var(--baby-blue);
+  color: white;
+  box-shadow: 0 10px 25px rgba(135, 206, 235, 0.3);
+}
+
+.contact-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(135, 206, 235, 0.4);
+  background: var(--baby-blue-hover);
+}
+
+.info-btn {
+  background: transparent;
+  color: var(--primary-text);
+  border: 2px solid var(--baby-blue);
+}
+
+.info-btn:hover {
+  background: var(--baby-blue);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(135, 206, 235, 0.3);
+}
+
+.contact-btn:active,
+.info-btn:active {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .bottom-section {
+    padding: 60px 0;
+  }
+
+  .bottom-heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .bottom-text {
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
+  }
+
+  .bottom-cta {
+    gap: 1rem;
+  }
+
+  .contact-btn,
+  .info-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bottom-section {
+    padding: 40px 0;
+  }
+
+  .bottom-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-btn,
+  .info-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+} 

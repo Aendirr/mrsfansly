@@ -1,0 +1,135 @@
+/**
+ * Copyright 2025 aendirr
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ */
+
+
+.text-slider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.9) 100%);
+  padding: 20px;
+  z-index: 10;
+}
+
+.slider-container {
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.slider-track {
+  display: flex;
+  animation: scroll-left 60s linear infinite;
+  gap: 50px;
+}
+
+.slide-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: 0 20px;
+}
+
+.slide-text {
+  color: #ffffff;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.text-slider:hover .slider-track {
+  animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+  .text-slider {
+    padding: 15px;
+  }
+
+  .slider-container {
+    height: 50px;
+  }
+
+  .slide-item {
+    padding: 0 15px;
+  }
+
+  .slide-text {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+  }
+
+  .slider-track {
+    animation-duration: 45s;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-slider {
+    padding: 10px;
+  }
+
+  .slider-container {
+    height: 45px;
+  }
+
+  .slide-item {
+    padding: 0 10px;
+  }
+
+  .slide-text {
+    font-size: clamp(0.75rem, 3.5vw, 0.9rem);
+  }
+
+  .slider-track {
+    animation-duration: 35s;
+    gap: 30px;
+  }
+}
+
+.text-slider {
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-text {
+  transition: all 0.3s ease;
+}
+
+.slide-text:hover {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 0 0 10px rgba(255, 255, 255, 0.4);
+} 

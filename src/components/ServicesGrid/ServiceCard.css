@@ -1,0 +1,291 @@
+/**
+ * Copyright 2025 aendirr
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ */
+
+
+.service-card {
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.service-card.has-video {
+  background: transparent;
+  border: 2px solid var(--baby-blue);
+}
+
+.service-card.has-video.video-playing {
+  border-color: var(--baby-blue-hover);
+  box-shadow: 0 0 20px rgba(135, 206, 235, 0.3);
+}
+
+
+.service-card-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+  opacity: 0.8;
+}
+
+.service-card.video-playing .background-video {
+  opacity: 1;
+}
+
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.service-card:not(.video-playing) .video-overlay {
+  background: transparent;
+}
+
+[data-theme="dark"] .service-card:not(.video-playing) .video-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 26, 0.4) 0%,
+    rgba(26, 26, 26, 0.3) 50%,
+    rgba(26, 26, 26, 0.5) 100%
+  );
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+  border-color: var(--baby-blue-hover);
+}
+
+.service-card.clickable {
+  cursor: pointer;
+}
+
+.service-card.clickable:hover {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+}
+
+.service-card.has-video.clickable:hover {
+  background: transparent;
+}
+
+
+.service-card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.service-card.video-playing .service-card-content {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.service-card.video-playing .service-title,
+.service-card.video-playing .service-description {
+  color: white;
+}
+
+
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.service-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary-text);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.service-description {
+  color: var(--primary-text);
+  opacity: 0.8;
+  line-height: 1.6;
+  flex-grow: 1;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.service-click-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--baby-blue);
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: var(--transition);
+  margin-top: auto;
+}
+
+.service-card:hover .service-click-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-click-hint i {
+  font-size: 1rem;
+}
+
+
+
+
+
+
+.service-card.clickable:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+
+@media (max-width: 768px) {
+  .service-card {
+    padding: 1.5rem;
+    min-height: 250px;
+  }
+
+  .service-icon {
+    font-size: 2.5rem;
+    height: 70px;
+    margin-bottom: 1rem;
+  }
+
+  .service-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .service-description {
+    font-size: 0.9rem;
+  }
+
+
+
+
+  .service-card:not(.video-playing) .video-overlay {
+    background: transparent;
+  }
+
+  [data-theme="dark"] .service-card:not(.video-playing) .video-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(26, 26, 26, 0.5) 0%,
+      rgba(26, 26, 26, 0.4) 50%,
+      rgba(26, 26, 26, 0.6) 100%
+    );
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card {
+    padding: 1.25rem;
+    min-height: 220px;
+  }
+
+  .service-icon {
+    font-size: 2.25rem;
+    height: 60px;
+  }
+
+  .service-title {
+    font-size: 1.1rem;
+  }
+
+  .service-description {
+    font-size: 0.85rem;
+  }
+
+
+
+
+  .service-card.has-video {
+    border-width: 1px;
+  }
+
+
+  .service-card.video-playing .service-card-content {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+  }
+}
+
+
+@media (hover: none) and (pointer: coarse) {
+  .service-card.has-video {
+    border-color: var(--baby-blue-hover);
+  }
+
+  .service-card.has-video .background-video {
+    opacity: 0.8;
+  }
+
+  .service-card.has-video.video-playing .background-video {
+    opacity: 1;
+  }
+
+  .service-card.has-video .video-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.2) 50%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  }
+
+  .service-card.has-video.video-playing .video-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+  }
+} 

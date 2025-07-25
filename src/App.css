@@ -1,0 +1,73 @@
+/**
+ * Copyright 2025 aendirr
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ */
+
+
+.App {
+  min-height: 100vh;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  transition: var(--transition);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  transition: filter 0.3s ease-out;
+}
+
+body.mobile-menu-open main,
+body.mobile-menu-open footer {
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.App {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+*:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #764ba2;
+} 
