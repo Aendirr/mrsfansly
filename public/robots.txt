@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap (mutlaka ekle)
-Sitemap: https://www.ornekdomain.com/sitemap.xml
+Sitemap: https://www.mrsfansly.com/sitemap.xml
